@@ -1,18 +1,16 @@
 import React from "react";
 import EditCard from "./EditCard";
-import NewCard from "./NewCard";
+import GroupButtons from "./GroupButtons";
 import Study from "./Study";
 import subjects from "./TempData";
 
 //Groups is the home page "/"
 
 function Groups() {
-  //for each subject return
+  // renders a row for each grouping of cards
   const subjectDisplay = subjects.map((subject) => {
     return (
-      <div className="group-border" key={subject.id}>
-        <div className="group"> {subject.title} </div>
-      </div>
+      <GroupButtons key={subject.id} id={subject.id} subject={subject.title} />
     );
   });
 
@@ -23,7 +21,6 @@ function Groups() {
         <div id="new-group-btn">+ Add New Deck</div>
       </div>
       <div>{subjectDisplay}</div>
-      <NewCard />
       <EditCard />
       <Study />
     </div>
