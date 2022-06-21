@@ -1,7 +1,9 @@
 import React from "react";
-// import { Switch, Route } from "react-router-dom";
+import EditCard from "./EditCard";
+import { Switch, Route } from "react-router-dom";
 import Groups from "./Groups";
 import Header from "./Header";
+import Study from "./Study";
 
 function App() {
   return (
@@ -9,7 +11,18 @@ function App() {
       <div className="App-Header">
         <Header />
       </div>
-      <Groups />
+
+      <Switch>
+        <Route exact path="/edit">
+          <EditCard />
+        </Route>
+        <Route exact path="/study">
+          <Study />
+        </Route>
+        <Route exact path="/">
+          <Groups />
+        </Route>
+      </Switch>
     </>
   );
 }

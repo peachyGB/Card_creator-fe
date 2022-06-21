@@ -5,6 +5,10 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  overflow: scroll;
 }
 
 code {
@@ -80,4 +84,50 @@ a:active {
 .SE {
   float: right;
   margin-right: 10px;
+}
+
+/* EditCard */
+/* .flexer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+} */
+
+#existing-cards {
+  color: white;
+  background-color: #056580;
+  width: 25%;
+  height: 60%;
+  position: absolute;
+  top: auto;
+  left: 0;
+  margin: 20px;
+  padding: 40px;
+  overflow: scroll;
+}
+
+.editor-cards {
+  position: absolute;
+  left: 40%;
+  width: 30%;
+  height: 250px;
+  background-color: lightblue;
+  margin: 20px;
+}
+#card-front {
+  top: auto;
+}
+#card-back {
+  top: 420px;
+}
+#save-new {
+  left: 58%;
+  top: 700px;
+  position: absolute;
+  margin-right: 10px;
+}
+#save-end {
+  left: 65%;
+  top: 700px;
+  position: absolute;
 }

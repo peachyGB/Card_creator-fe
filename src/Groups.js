@@ -13,16 +13,14 @@ function Groups() {
       <GroupButtons key={subject.id} id={subject.id} subject={subject.title} />
     );
   });
-
+  function toEditor() {}
   return (
     <div className="all-groups">
       <h2>My Card Decks</h2>
-      <div className="btn-border">
+      <div className="btn-border" onClick={toEditor}>
         <div id="new-group-btn">+ Add New Deck</div>
       </div>
       <div>{subjectDisplay}</div>
-      <EditCard />
-      <Study />
     </div>
   );
 }

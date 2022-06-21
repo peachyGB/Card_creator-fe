@@ -5,7 +5,7 @@ function Header() {
   return (
     <div>
       <Link exact to="/">
-        <div>Card Creator</div>
+        <div>Study Deck</div>
       </Link>
     </div>
   );

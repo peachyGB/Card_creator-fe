@@ -1,12 +1,18 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function GroupButtons({ subject, id }) {
   return (
     <div className="group-border">
       <div className="group">
         {subject}
-        <button className="SE">S</button>
-        <button className="SE">E</button>
+        <Link exact to="/study">
+          <button className="SE">S</button>
+        </Link>
+
+        <Link exact to="/edit">
+          <button className="SE">E</button>
+        </Link>
       </div>
     </div>
   );
