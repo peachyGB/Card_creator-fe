@@ -1,13 +1,79 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+.App-Nav {
+  text-align: left;
+  display: flex;
+  flex-direction: row;
+}
+/* .home {
+  text-decoration: none;
+  color: inherit;
+} */
+.App-Header {
+  background-color: #056580;
+  min-height: 10vh;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  justify-content: center;
+  font-size: calc(10px + 3vmin);
+  font-weight: bold;
+  color: white;
+  text-indent: 30;
+  padding-left: 60px;
+}
+
+a,
+a:hover,
+a:focus,
+a:active {
+  text-decoration: none;
+  color: inherit;
+}
+.all-groups {
+  margin: 40px;
+  padding: 10px;
+}
+.group-border {
+  margin-left: 20%;
+  margin-right: 20%;
+  margin-top: 1%;
+  padding: 1%;
+  background-color: #00b6e8;
+}
+
+.group {
+  margin: 1px;
+  padding: 1%;
+  background-color: #ffffff26;
+  font-size: calc(8px + 1.5vmin);
+  font-weight: 500;
+  color: white;
+}
+.btn-border {
+  margin-left: 20%;
+  margin-right: 20%;
+  margin-top: 1%;
+  padding: 1%;
+  background-color: #b8f0ff;
+}
+#new-group-btn {
+  margin: 1px;
+  padding: 1%;
+  background-color: #ffffffb1;
+  font-size: calc(8px + 1.5vmin);
+  font-weight: 500;
+  color: rgb(45, 45, 45);
 }
