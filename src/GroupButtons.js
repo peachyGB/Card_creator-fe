@@ -1,7 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-function GroupButtons({ subject, id }) {
+function GroupButtons({ subject, id, groupsIDGrabber }) {
+  function handleEditClick() {
+    groupsIDGrabber(id);
+  }
   return (
     <div className="group-border">
       <div className="group">
@@ -11,7 +14,9 @@ function GroupButtons({ subject, id }) {
         </Link>
 
         <Link exact to="/edit">
-          <button className="SE">E</button>
+          <button className="SE" onClick={handleEditClick}>
+            E
+          </button>
         </Link>
       </div>
     </div>

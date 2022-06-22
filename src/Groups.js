@@ -1,23 +1,33 @@
-import React from "react";
-import EditCard from "./EditCard";
+import React, { useEffect, useState } from "react";
 import GroupButtons from "./GroupButtons";
-import Study from "./Study";
-import subjects from "./TempData";
+//import subjects from "./TempData";
 
 //Groups is the home page "/"
+function Groups({ groupsIDGrabber }) {
+  const [subjects, setSubjects] = useState([]);
 
-function Groups() {
+  useEffect(() => {
+    fetch("http://localhost:9292/subjects")
+      .then((r) => r.json())
+      .then((data) => setSubjects(data));
+  }, []);
+
   // renders a row for each grouping of cards
   const subjectDisplay = subjects.map((subject) => {
     return (
-      <GroupButtons key={subject.id} id={subject.id} subject={subject.title} />
+      <GroupButtons
+        key={subject.id}
+        id={subject.id}
+        subject={subject.subject}
+        groupsIDGrabber={groupsIDGrabber}
+      />
     );
   });
-  function toEditor() {}
+
   return (
     <div className="all-groups">
       <h2>My Card Decks</h2>
-      <div className="btn-border" onClick={toEditor}>
+      <div className="btn-border">
         <div id="new-group-btn">+ Add New Deck</div>
       </div>
       <div>{subjectDisplay}</div>
