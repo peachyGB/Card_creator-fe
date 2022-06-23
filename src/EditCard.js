@@ -1,16 +1,35 @@
 import React, { useState } from "react";
 
-function EditCard({ currentCards }) {
+function EditCard({ currentCards, setCurrentCards }) {
   const [frontText, setFrontText] = useState("");
   const [backText, setBackText] = useState("");
+
+  function handleDelete(e) {
+    let removedId = parseInt(e.target.value);
+    const shortenedList = currentCards.filter((card) => {
+      return card.id !== removedId;
+    });
+
+    fetch(`http://localhost:9292/cards/${removedId}`, {
+      method: "DELETE",
+    })
+      .then((r) => r.json())
+      .then(() => console.log("deleted!"));
+
+    setFrontText("");
+    setBackText("");
+    setCurrentCards(shortenedList);
+  }
 
   //populates the Existing Cards box with mini cards
   let existingCards = currentCards.map((card) => {
     return (
-      <>
+      <a className="card-chunk">
         <div className="mini-card">{card.front}</div>
-        <button>D</button>
-      </>
+        <button className="delete-b" value={card.id} onClick={handleDelete}>
+          D
+        </button>
+      </a>
     );
   });
   //captures subject id that will be used in the new card
@@ -38,7 +57,7 @@ function EditCard({ currentCards }) {
       body: JSON.stringify(newCard),
     })
       .then((r) => r.json())
-      .then((data) => console.log(data));
+      .then((data) => setCurrentCards([...currentCards, data]));
     setFrontText("");
     setBackText("");
   }
@@ -52,7 +71,7 @@ function EditCard({ currentCards }) {
           <div className="editor-cards" id="card-front">
             <input
               type="text"
-              id="front"
+              id="frontI"
               name="front"
               value={frontText}
               onChange={(e) => setFrontText(e.target.value)}
@@ -62,7 +81,7 @@ function EditCard({ currentCards }) {
           <div className="editor-cards" id="card-back">
             <input
               type="text"
-              id="back"
+              id="backI"
               name="back"
               value={backText}
               onChange={(e) => setBackText(e.target.value)}

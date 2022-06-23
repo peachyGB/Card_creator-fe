@@ -86,12 +86,7 @@ a:active {
   margin-right: 10px;
 }
 
-/* EditCard */
-/* .flexer {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-} */
+/* EDITCARD */
 
 #existing-cards {
   color: white;
@@ -130,4 +125,44 @@ a:active {
   left: 65%;
   top: 700px;
   position: absolute;
+}
+
+.mini-card {
+  position: center;
+  width: 70%;
+  height: 30%;
+  background-color: lightblue;
+  margin: 20px;
+  color: black;
+  font-weight: 700;
+  text-align: center;
+  line-height: 150%;
+  vertical-align: middle;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+.delete-b {
+  position: center;
+}
+
+#frontI,
+#backI {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 50;
+  background-color: rgba(255, 255, 255, 0);
+  text-align: center;
+  border: none;
+  font-size: 30px;
+  font-weight: 800;
+}
+
+#backI {
+  font-size: 20px;
+  font-weight: 100;
 }

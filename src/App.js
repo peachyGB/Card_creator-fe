@@ -23,7 +23,10 @@ function App() {
 
       <Switch>
         <Route exact path="/edit">
-          <EditCard currentCards={currentCards} />
+          <EditCard
+            currentCards={currentCards}
+            setCurrentCards={setCurrentCards}
+          />
         </Route>
         <Route exact path="/study">
           <Study />
