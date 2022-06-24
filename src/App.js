@@ -29,7 +29,7 @@ function App() {
           />
         </Route>
         <Route exact path="/study">
-          <Study />
+          <Study currentCards={currentCards} />
         </Route>
         <Route exact path="/">
           <Groups groupsIDGrabber={groupsIDGrabber} />
