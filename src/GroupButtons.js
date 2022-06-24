@@ -6,20 +6,21 @@ function GroupButtons({ subject, id, groupsIDGrabber }) {
     groupsIDGrabber(id);
   }
   return (
-    <div className="group-border">
-      <div className="group">
-        {subject}
-        <Link exact to="/study">
-          <button className="SE">S</button>
-        </Link>
+    <Link exact to="/study">
+      <div className="group-border">
+        <div className="group">
+          {subject}
 
-        <Link exact to="/edit">
-          <button className="SE" onClick={handleEditClick}>
-            E
-          </button>
-        </Link>
+          {/* <button className="SE">S</button> */}
+
+          <Link exact to="/edit">
+            <button className="SE" onClick={handleEditClick}>
+              E
+            </button>
+          </Link>
+        </div>
       </div>
-    </div>
+    </Link>
   );
 }
 

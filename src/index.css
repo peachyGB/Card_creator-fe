@@ -166,3 +166,16 @@ a:active {
   font-size: 20px;
   font-weight: 100;
 }
+
+#add-group {
+  /* visibility: visible; */
+  position: fixed;
+  background-color: lightblue;
+  left: 40%;
+  margin: 1px;
+  padding: 5%;
+  font-size: calc(8px + 1.5vmin);
+  font-weight: 500;
+  color: rgb(45, 45, 45);
+  width: 200px;
+}

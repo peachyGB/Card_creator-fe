@@ -39,24 +39,16 @@ function Groups({ groupsIDGrabber }) {
     setNewGroupName("");
     setAddGroupHidden(!addGroupHidden);
   }
-  function unhide() {
-    setAddGroupHidden(!addGroupHidden);
-  }
+
   return (
     <div className="all-groups">
       <h2>My Card Decks</h2>
       <div className="btn-border">
-        <div id="new-group-btn" onClick={unhide}>
+        <div id="new-group-btn" onClick={setAddGroupHidden(!addGroupHidden)}>
           + Add New Deck
         </div>
       </div>
-      <div
-        id="add-group"
-        // style={{ visibility: "hidden" }}
-        style={
-          addGroupHidden ? { visibility: "hidden" } : { visibility: "visible" }
-        }
-      >
+      <div id="add-group">
         <form onSubmit={handleGroupNameSubmit}>
           <label for="group-name">New Group Name: </label>
           <input
